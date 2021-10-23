@@ -60,7 +60,7 @@ public class Table extends Observable {
 	private final Color checkMateColor = Color.decode("#2C1313");
 	
 	private static final Table INSTANCE = new Table();
-	private Table() {
+	public Table() {
 		this.gameFrame = new JFrame("JChess");
 		this.gameFrame.setLayout(new BorderLayout());
 		final JMenuBar tableMenuBar = createTableMenuBar();
