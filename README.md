@@ -22,7 +22,7 @@ In preferences, it shows flip board, which just flips the game board
 Flip board after each move, which flips the board after each move, making it easier for two humans to play on the same computer.
 And highlight legal moves, which would let the user know through green dots where a selected piece can move and also red borders around enemy pieces, which shows what pieces the selected piece can attack.
 
-Finally, in the options menu, there are two choices:
+Finally, in the options menu, there are three choices:
 1. New game: this simply creates a new game to be played and resets the board back to the standardized board.
 2. Undo last move: this would just make the board go back to what it looked like one move before, in case a player did a mistake and would like to undo his mistake.
 3. Set up game: This brings up another small window and this is the function that brings in the AI portion of the chess board, you simply would have to select which player is human and which player is a computer, or you could have it set up as player vs player or computer vs computer. There is a scroll bar called search depth, which means that the higher the depth you set, the harder the difficulty is set into the computer players. If you were to set the depth at 3, for example, the computer is essentially thinking 3 moves ahead in the game. HOWEVER, it is strongly recommended that you keep the search depth below 4 because as the game progresses, it takes the AI much longer to process and do a move due to the amount of mobility and deep moves it has to check.
