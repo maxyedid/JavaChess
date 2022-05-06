@@ -1,7 +1,7 @@
 # JavaChess
 Chess game created through the java GUI system
 
-Personally, I created a project and ran this code through the eclipse IDE and it works fine at the moment.
+Personally, I created the project and ran this code through the eclipse IDE and it works fine at the moment.
 You can download eclipse through this site: https://www.eclipse.org/ide/
 Then, you should clone this repository into eclipse and also select a directory location.
 
