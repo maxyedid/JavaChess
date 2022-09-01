@@ -74,4 +74,8 @@ public class BlackPlayer extends Player {
 	}
 		return Collections.unmodifiableList(kingCastles);
 	}
+	@Override
+	public String toString() {
+		return "Black";
+	}
 }

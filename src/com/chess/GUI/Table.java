@@ -86,7 +86,7 @@ public class Table extends Observable {
 	
 	public void show() {
 		Table.get().getMoveLog().clear();
-		Table.get().getGameHistoryPanel().redo(Table.get().getGameBoard(), Table.get().getMoveLog());
+		Table.get().getGameHistoryPanel().redo( Table.get().getGameBoard(), Table.get().getMoveLog());
 		Table.get().getTakenPiecesPanel().redo(Table.get().getMoveLog());
 		Table.get().getBoardPanel().drawBoard(Table.get().getGameBoard());
 	}
@@ -533,7 +533,6 @@ public class Table extends Observable {
 						if (chessBoard.currentPlayer().makeMove(move).getMoveStatus() != MoveStatus.LEAVES_PLAYER_IN_CHECK) {
 						try {
 							if (move.isAttack()) {
-								//add(new JLabel(new ImageIcon(ImageIO.read(new File("Chess pieces/red_dot.png")))));
 								setBorder(BorderFactory.createLineBorder(Color.RED, 5));
 							} else {
 							add(new JLabel(new ImageIcon(ImageIO.read(new File("Chess pieces/green_dot.png")))));
