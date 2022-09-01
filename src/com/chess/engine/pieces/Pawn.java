@@ -9,7 +9,6 @@ import com.chess.engine.board.BoardUtils;
 import com.chess.engine.board.Move;
 import com.chess.engine.board.Move.PawnPromotion;
 import com.chess.engine.board.Tile;
-import com.chess.engine.pieces.Piece.PieceType;
 
 public class Pawn extends Piece {
 	

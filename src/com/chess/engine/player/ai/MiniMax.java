@@ -21,7 +21,6 @@ public class MiniMax implements MoveStrategy {
 	@Override
 	public Move execute(Board board) {
 		
-		final long startTime = System.currentTimeMillis();
 		
 		Move bestMove = null;
 		
@@ -30,8 +29,6 @@ public class MiniMax implements MoveStrategy {
 		int currentValue;
 		
 		System.out.println(board.currentPlayer() + "Thinking with depth = " + this.searchDepth);
-		
-		int numMoves = board.currentPlayer().getLegalMoves().size();
 		
 		for (final Move move: board.currentPlayer().getLegalMoves()) {
 			
@@ -52,8 +49,8 @@ public class MiniMax implements MoveStrategy {
 			}
 			
 		}
-		final long executionTime = System.currentTimeMillis() - startTime;
-		
+
+
 		return bestMove;
 
 		

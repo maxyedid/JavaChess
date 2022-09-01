@@ -1,7 +1,6 @@
 package com.chess.engine.pieces;
 
 import com.chess.engine.board.*;
-import com.chess.engine.pieces.Piece.PieceType;
 import com.chess.engine.Alliance;
 import java.util.*;
 

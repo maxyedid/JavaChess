@@ -7,7 +7,6 @@ import com.chess.engine.board.Board;
 import com.chess.engine.board.BoardUtils;
 import com.chess.engine.board.Move;
 import com.chess.engine.board.Tile;
-import com.chess.engine.pieces.Piece.PieceType;
 
 public class Bishop extends Piece {
 	//The moves are vectors because bishops move in the direction of a vector, not to certain squares in an area

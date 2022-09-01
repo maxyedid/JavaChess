@@ -10,9 +10,6 @@ import com.chess.engine.board.Board;
 import com.chess.engine.board.BoardUtils;
 import com.chess.engine.board.Move;
 import com.chess.engine.board.Tile;
-import com.chess.engine.board.Move.KingSideCastleMove;
-import com.chess.engine.pieces.Piece.PieceType;
-import com.chess.engine.player.Player;
 
 public class King extends Piece {
 	// Has similar movements to a queen but it is not in a vector, only limited to move one square near

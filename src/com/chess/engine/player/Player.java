@@ -1,8 +1,6 @@
 package com.chess.engine.player;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import com.chess.engine.Alliance;
 import com.chess.engine.board.Board;
@@ -21,9 +19,9 @@ public abstract class Player {
 			final Collection<Move> opponentMoves) {
 		this.board = board;
 		this.playerKing = establishKing();
-		playerLegals.addAll(calculateKingCastles(playerLegals, opponentMoves));
-		this.legalMoves = Collections.unmodifiableCollection(playerLegals);;
 		this.isInCheck = !Player.calculateAttacksOnTile(this.playerKing.getPiecePosition(), opponentMoves).isEmpty();
+		playerLegals.addAll(calculateKingCastles(playerLegals, opponentMoves));
+		this.legalMoves = Collections.unmodifiableCollection(playerLegals);
 	}
 
 	protected static Collection<Move> calculateAttacksOnTile(int piecePosition, Collection<Move> moves) {

@@ -2,7 +2,6 @@ package com.chess.engine.pieces;
 
 import java.util.*;
 import com.chess.engine.board.*;
-import com.chess.engine.pieces.Piece.PieceType;
 import com.chess.engine.Alliance;
 
 public class Queen extends Piece {
