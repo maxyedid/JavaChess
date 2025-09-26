@@ -379,7 +379,6 @@ public class Table extends Observable {
 
 		public void drawBoard(final Board board) {
 			this.removeAll();
-			System.out.println("Drawing board");
 			for (final TilePanel tilePanel: boardDirection.traverse(boardTiles)) {
 				tilePanel.drawTile(board);
 				add(tilePanel);
@@ -437,14 +436,12 @@ public class Table extends Observable {
 				@Override
 				public void mouseClicked(final MouseEvent e) {
 					if (SwingUtilities.isRightMouseButton(e)) {
-						System.out.println("Deselected");
 						sourceTile = null;
 						destinationTile = null;
 						humanMovedPiece = null;
 					} else if (SwingUtilities.isLeftMouseButton(e)) {
 							if (sourceTile == null) {
 								//first click
-								System.out.println("Selected Tile");
 								sourceTile = chessBoard.getTile(tileId);
 								if (sourceTile.isTileOccupied() && sourceTile.getPiece().getPieceAlliance().equals(chessBoard.currentPlayer().getAlliance())) {
 								humanMovedPiece = sourceTile.getPiece();
@@ -457,12 +454,9 @@ public class Table extends Observable {
 								humanMovedPiece = sourceTile.getPiece();
 							} else {
 							//second click
-							System.out.println("Destination Tile Selected");
 							destinationTile = chessBoard.getTile(tileId);
 							final Move move = MoveFactory.createMove(chessBoard, sourceTile.getTileCoordinate(), destinationTile.getTileCoordinate());
-							System.out.println("Move created");
 							final MoveTransition transition = chessBoard.currentPlayer().makeMove(move);
-							System.out.println("Move made");
 							if (transition.getMoveStatus().isDone()) {
 								chessBoard = transition.getTransitionBoard();
 								moveLog.addMove(move);
@@ -486,9 +480,7 @@ public class Table extends Observable {
 									if(gameSetUp.isAIPlayer(chessBoard.currentPlayer())) {
 										Table.get().moveMadeUpdate(PlayerType.HUMAN);
 									}
-									System.out.println("Creating new board...");
 									boardPanel.drawBoard(chessBoard);
-									System.out.println("Done");
 								}
 							});
 				}

@@ -82,9 +82,7 @@ public abstract class Player {
 		if (!isMoveLegal(move)) {
 			return new MoveTransition(this.board, move, MoveStatus.ILLEGAL_MOVE);
 		}
-		System.out.println("Player: making move");
 		final Board transitionBoard = move.execute();
-		System.out.println("Player move executed");
 		final Collection<Move> kingAttacks = Player.calculateAttacksOnTile(transitionBoard.currentPlayer().getOpponent().getPlayerKing().getPiecePosition(), 
 				transitionBoard.currentPlayer().getLegalMoves());
 		

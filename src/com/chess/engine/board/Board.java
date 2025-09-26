@@ -73,11 +73,9 @@ public class Board {
 	}
 	private Collection<Move> calculateLegalMoves(Collection<Piece> pieces) {
 		final List<Move> legalMoves = new ArrayList<Move>();
-		System.out.println("Calculating all legal moves");
 		for (final Piece piece: pieces) {
 			legalMoves.addAll(piece.calculateLegalMove(this));
 		}
-		System.out.println("All legal moves calculated");
 		return legalMoves;
 	}
 
@@ -170,7 +168,6 @@ public class Board {
 			return this;
 		}
 		public Board build() {
-			System.out.println("New board made");
 			return new Board(this);
 		}
 

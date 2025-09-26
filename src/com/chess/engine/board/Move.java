@@ -80,7 +80,6 @@ public abstract class Move {
 		//Move the moved piece!
 		builder.setPiece(this.movedPiece.movePiece(this));
 		builder.setMoveMaker(this.board.currentPlayer().getOpponent().getAlliance());
-		System.out.println("Builder made");
 		return builder.build();
 	}
 	public Board undo() {
@@ -158,7 +157,6 @@ public abstract class Move {
 			//Move the moved piece!
 			builder.setPiece(this.movedPiece.movePiece(this));
 			builder.setMoveMaker(this.board.currentPlayer().getOpponent().getAlliance());
-			System.out.println("Builder made");
 			return builder.build();
 		}
 		
