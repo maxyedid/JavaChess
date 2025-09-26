@@ -18,9 +18,10 @@ On the top of the window, there is a menu bar which has different functions.
 The file menu should display Load PNG, which should put in a saved board (This is still being made).
 It should also display exit, which simply closes the game and window.
 
-In preferences, it shows flip board, which just flips the game board
+In preferences, it shows flip board, which flips the game board.
 Flip board after each move, which flips the board after each move, making it easier for two humans to play on the same computer.
-And highlight legal moves, which would let the user know through green dots where a selected piece can move and also red borders around enemy pieces, which shows what pieces the selected piece can attack.
+Highlight legal moves, which would let the user know through green dots where a selected piece can move and also red borders around enemy pieces, which shows what pieces the selected piece can attack. (This is turned on by default)
+Highlight previous move, which dims the tile from the most recently moved piece. (This is turned on by default)
 
 Finally, in the options menu, there are three choices:
 1. New game: this simply creates a new game to be played and resets the board back to the standardized board.
