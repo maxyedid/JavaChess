@@ -74,7 +74,8 @@ public class Table extends Observable {
 		this.addObserver(new TableGameAIWatcher());
 		this.gameSetUp = new GameSetUp(this.gameFrame, true);
 		this.boardDirection = BoardDirection.NORMAL;
-		this.highlightLegalMoves = false;
+		this.highlightLegalMoves = true;
+		this.highlightPreviousMove = true;
 		this.gameFrame.add(this.takenPiecesPanel, BorderLayout.WEST);
 		this.gameFrame.add(this.boardPanel, BorderLayout.CENTER);
 		this.gameFrame.add(this.gameHistoryPanel, BorderLayout.EAST);
@@ -177,9 +178,12 @@ public class Table extends Observable {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				highlightLegalMoves = legalMoveHighlighterCheckbox.isSelected();
+
+				boardPanel.drawBoard(chessBoard);
 			}	
 		});
 
+		legalMoveHighlighterCheckbox.setSelected(true);
 		preferencesMenu.add(legalMoveHighlighterCheckbox);
 
 		final JCheckBoxMenuItem showPreviousMoveCheckbox = new JCheckBoxMenuItem("Highlight Previous Move", false);
@@ -193,9 +197,7 @@ public class Table extends Observable {
 			}	
 		});
 
-		highlightPreviousMove = true;
 		showPreviousMoveCheckbox.setSelected(true);
-		
 		preferencesMenu.add(showPreviousMoveCheckbox);
 		
 		return preferencesMenu;
@@ -543,7 +545,7 @@ public class Table extends Observable {
 		}
 		
 		private void highLightLegals(final Board board) {
-			//if (highlightLegalMoves) {
+			if (highlightLegalMoves) {
 				for (final Move move: pieceLegalMoves(board)) {
 					if (move.getDestinationCoordinate() == this.tileId) {
 						if (chessBoard.currentPlayer().makeMove(move).getMoveStatus() != MoveStatus.LEAVES_PLAYER_IN_CHECK) {
@@ -561,7 +563,7 @@ public class Table extends Observable {
 					}
 					
 				}
-			//}
+			}
 		}
 
 		private Collection<Move> pieceLegalMoves(final Board board) {
