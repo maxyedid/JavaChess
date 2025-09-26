@@ -46,6 +46,7 @@ public class Table extends Observable {
 	
 	private boolean highlightLegalMoves;
 	private boolean flipBoardAfterMove;
+	private boolean highlightPreviousMove;
 	
 	private final static Dimension OUTER_FRAME_DIMENSION = new Dimension(600, 600);
 	private final static Dimension BOARD_PANEL_DIMENSION = new Dimension(400,350);
@@ -176,11 +177,26 @@ public class Table extends Observable {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				highlightLegalMoves = legalMoveHighlighterCheckbox.isSelected();
-				
 			}	
 		});
-		
+
 		preferencesMenu.add(legalMoveHighlighterCheckbox);
+
+		final JCheckBoxMenuItem showPreviousMoveCheckbox = new JCheckBoxMenuItem("Highlight Previous Move", false);
+		
+		showPreviousMoveCheckbox.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				highlightPreviousMove = showPreviousMoveCheckbox.isSelected();
+
+				boardPanel.drawBoard(chessBoard);
+			}	
+		});
+
+		highlightPreviousMove = true;
+		showPreviousMoveCheckbox.setSelected(true);
+		
+		preferencesMenu.add(showPreviousMoveCheckbox);
 		
 		return preferencesMenu;
 	}
@@ -585,7 +601,12 @@ public class Table extends Observable {
             		setBackground(checkMateColor);
             	}
             }
-           
+			if (highlightPreviousMove && 
+				moveLog != null && 
+				moveLog.moves.size() > 0 && 
+				moveLog.moves.get(moveLog.moves.size() - 1).getCurrentCoordinate() == tileId) {
+				setBackground(isLight ? Color.LIGHT_GRAY : Color.decode("#014112"));
+			}
 		}
 		
 	}
